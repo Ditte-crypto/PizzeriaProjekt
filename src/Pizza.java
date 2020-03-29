@@ -1,18 +1,16 @@
-import java.sql.Time;
-
 public class Pizza {
 int id;
 String name;
 int pris;
-Time tilberedningstid;
+int tilberedningstid;
 
-    public Pizza(int id, String name, Time tilberedningstid, int pris) {
+    public Pizza(int id, String name, int pris, int tilberedningstid) {
         this.id = id;
         this.name = name;
         this.tilberedningstid = tilberedningstid;
         this.pris = pris;
     }
-public Pizza makePizzaInstance(){
+public void makePizzaInstance(){
 
 }
 }
