@@ -10,7 +10,7 @@ public class ImportPizzasFromFile {
 
         ArrayList<Pizza> importedpizzas = new ArrayList<>();
 
-        File textFile = new File("data/pizzafile.csv");
+        File textFile = new File("data/pizzaliste.csv");
 
         Pizza tempPizza = null;
 
