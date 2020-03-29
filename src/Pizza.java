@@ -1,9 +1,10 @@
 public class Pizza {
-    Menu menu;
-    Ordreliste ordreliste;
+int id;
+String name;
+String description;
+int price;
 
-    public void showMenu(Menu){
+public Pizza makePizzaInstance(){
 
-    }
-
+}
 }
