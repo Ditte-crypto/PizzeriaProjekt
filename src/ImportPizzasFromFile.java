@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class ImportPizzasFromFile {
 
-    public static ArrayList<Pizza> importTeams() throws FileNotFoundException {
+    public static ArrayList<Pizza> importPizzas() throws FileNotFoundException {
 
-        ArrayList<Pizza> importedteams = new ArrayList<>();
+        ArrayList<Pizza> importedpizzas = new ArrayList<>();
 
         File textFile = new File("data/pizzafile.csv");
 
@@ -19,13 +19,13 @@ public class ImportPizzasFromFile {
         while (in.hasNextLine()) {
 
             String line = in.nextLine();
-            String [] lineArr = line.split(",");
+            String [] lineArr = line.split(";");
 
             try {
                 String [] playerArr = Arrays.copyOfRange(lineArr, 1, 2);
 
                 if(playerArr[0].contains("D")) {
-                    importedteams.add(tempPizza);
+                    importedpizzas.add(tempPizza);
                 } else {
                     System.out.println("hej");
                 }
@@ -36,7 +36,7 @@ public class ImportPizzasFromFile {
 
         }
         in.close();
-        return importedteams;
+        return importedpizzas;
 
     }
 }
