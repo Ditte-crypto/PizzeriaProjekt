@@ -12,14 +12,8 @@ public class ImportPizzasFromFile {
     Time tilberedningstid;
     int pris;
 
-    public ImportPizzasFromFile(int pizzaNummer, String pizzaNavn, Time tilberedningstid, int pris) {
-        this.pizzaNummer = pizzaNummer;
-        this.pizzaNavn = pizzaNavn;
-        this.tilberedningstid = tilberedningstid;
-        this.pris = pris;
-    }
 
-    public static ArrayList<Pizza> importPizzas() throws FileNotFoundException {
+    public static importPizzas() throws FileNotFoundException {
 
         ArrayList<Pizza> importedpizzas = new ArrayList<>();
 
@@ -49,7 +43,6 @@ public class ImportPizzasFromFile {
 
         }
         in.close();
-        return importedpizzas;
 
     }
 
