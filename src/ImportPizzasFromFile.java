@@ -1,15 +1,15 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ImportPizzasFromFile {
 
 
-    public static void importPizzas() throws FileNotFoundException {
+    public static ArrayList<Pizza> importPizzas() throws FileNotFoundException {
 
+        ArrayList<Pizza> pizzaliste = new ArrayList<>();
         File textFile = new File("data/pizzaliste.csv");
-
-        Pizza tempPizza = null;
 
         Scanner in = new Scanner(textFile);
 
@@ -20,7 +20,7 @@ public class ImportPizzasFromFile {
 
             try {
                 Pizza pizza = new Pizza(Integer.parseInt(lineArr[0]), lineArr[1], Integer.parseInt(lineArr[2]), Integer.parseInt(lineArr[3]));
-                System.out.println(pizza);
+                pizzaliste.add(pizza);
                 }
 
             catch (Exception e) {
@@ -29,6 +29,7 @@ public class ImportPizzasFromFile {
 
         }
         in.close();
+        return pizzaliste;
     }
 }
 /* public class ImporterBibliotekerFraFil {
