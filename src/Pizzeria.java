@@ -16,7 +16,7 @@ public class Pizzeria {
     static Menu menu;
     Ordreliste ordreliste;
 
-    public static void showMenu(){
+    public static void showMenu() {
         try {
             ArrayList<Pizza> pizzaliste = ImportPizzasFromFile.importPizzas();
             menu = new Menu(pizzaliste);
@@ -26,14 +26,16 @@ public class Pizzeria {
         System.out.println(menu);
     }
 
+    public static void listOrders() {
+        //show current orders
+    }
+
+    public static void startNewOrder() {
+
+    }
+
     public static void main(String[] args) {
         showMenu();
     }
-
-    public void showNextOrder(){
-
-    }
-    public void updateOrder(int id){
-
-    }
 }
+
