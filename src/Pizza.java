@@ -15,6 +15,6 @@ int tilberedningstid;
 public static void lavPizzaListe(Pizza tempPizza){
         ArrayList<Pizza> pizzaliste = new ArrayList<>();
         pizzaliste.add(tempPizza);
-        Menu menu = new Menu(pizzaListe);
+        Menu menu = new Menu(pizzaliste);
 }
 }
