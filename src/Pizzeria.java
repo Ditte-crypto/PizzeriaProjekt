@@ -16,7 +16,7 @@ public class Pizzeria {
     static Menu menu;
     Ordreliste ordreliste;
 
-    public static void showMenu(){
+    public static void showMenu() {
         try {
             ArrayList<Pizza> pizzaliste = ImportPizzasFromFile.importPizzas();
             menu = new Menu(pizzaliste);
@@ -31,11 +31,11 @@ public class Pizzeria {
     }
 
     public static void startNewOrder() {
-        
+
     }
-}
 
     public static void main(String[] args) {
         showMenu();
     }
+}
 
