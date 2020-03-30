@@ -1,8 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ImportPizzasFromFile {
@@ -20,13 +17,18 @@ public class ImportPizzasFromFile {
 
             String line = in.nextLine();
             String [] lineArr = line.split(";");
-            Pizza nyPizza = new Pizza(Integer.parseInt(lineArr[0]), lineArr[1], Integer.parseInt(lineArr[2]), Integer.parseInt(lineArr[3]));
 
+            try {
+                Pizza pizza = new Pizza(Integer.parseInt(lineArr[0]), lineArr[1], Integer.parseInt(lineArr[2]), Integer.parseInt(lineArr[3]));
+                System.out.println(pizza);
+                }
+
+            catch (Exception e) {
+                System.out.println("Error in reading file" + line);
+            }
 
         }
         in.close();
-
-
     }
 }
 /* public class ImporterBibliotekerFraFil {
