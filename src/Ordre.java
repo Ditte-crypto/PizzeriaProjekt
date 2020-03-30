@@ -2,12 +2,13 @@ import java.util.ArrayList;
 
 public class Ordre {
     int id;
-    ArrayList<Pizza> pizzaer;
     String status;
+    ArrayList<Pizza> pizzaer;
 
-    public Ordre(int id, String status) {
-        this.id = id++;
+    public Ordre(int id, String status, ArrayList<Pizza> pizzaer) {
+        this.id = id;
         this.status = status;
+        this.pizzaer = pizzaer;
     }
 
     public void addPizza(Pizza pizza) {
