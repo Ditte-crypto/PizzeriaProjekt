@@ -5,7 +5,7 @@ public class Ordre {
     ArrayList<Pizza> pizzaer;
     String status;
 
-    public void addPizza(Pizza) {
+    public void addPizza(Pizza pizza) {
 
     }
 
