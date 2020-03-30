@@ -11,12 +11,14 @@ public class Ordre {
     }
 
     public void addPizza(Pizza pizza) {
-
+        pizzaer.add(pizza);
     }
 
     public double calculateTotal(Ordre ordre) {
         double total = 0.0;
-
+        for (Pizza p : pizzaer){
+            total = total +Pizza.pris;
+        }
         return total;
     }
 
