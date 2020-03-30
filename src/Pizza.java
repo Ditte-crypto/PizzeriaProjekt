@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Pizza {
 int id;
 String name;
-int pris;
+static int pris;
 int tilberedningstid;
 
     public Pizza(int id, String name, int pris, int tilberedningstid) {
