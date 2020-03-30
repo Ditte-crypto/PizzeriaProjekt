@@ -38,7 +38,9 @@ public class Pizzeria {
         Pizza pizza = pizzaliste.get(pizzanr - 1);
         Ordre newordre = new Ordre(Ordre.Status.venter);
 
-        Ordre.addPizza(pizza);
+        for (int a = 0; a<=antal; a++) {
+            Ordre.addPizza(pizza);
+        }
     }
 
     public void showNextOrder(){
