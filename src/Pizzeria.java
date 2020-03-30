@@ -29,4 +29,11 @@ public class Pizzeria {
     public static void main(String[] args) {
         showMenu();
     }
+
+    public void showNextOrder(){
+
+    }
+    public void updateOrder(int id){
+
+    }
 }
