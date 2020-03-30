@@ -11,6 +11,10 @@ public class Pizzeria {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Pizza.lavPizzaListe(pizza);
+        menu = Pizza.lavPizzaListe(pizza);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(menu);
     }
 }
