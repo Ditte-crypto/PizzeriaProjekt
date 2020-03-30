@@ -20,8 +20,10 @@ public class Ordre {
         return total;
     }
 
-    public void setStatus(String str) {
-
+    public enum Status {
+        venter, laves, faerdig, afhentet, afbestilt, none
     }
+
+    private Status statusexempel = Status.none;
 }
 
