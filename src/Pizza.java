@@ -12,11 +12,7 @@ int tilberedningstid;
         this.tilberedningstid = tilberedningstid;
         this.pris = pris;
     }
-public static Menu lavPizzaListe(Pizza p){
-        ArrayList<Pizza> pizzaliste = new ArrayList<>();
-        Menu menu = new Menu(pizzaliste);
-        return menu;
-}
+
 
     @Override
     public String toString() {
