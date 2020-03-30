@@ -34,6 +34,14 @@ public class Pizzeria {
 
     }
 
+    public void showNextOrder(){
+
+    }
+
+    public void updateOrder(int id){
+
+    }
+
     public static void main(String[] args) {
         showMenu();
     }
