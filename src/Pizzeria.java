@@ -1,10 +1,10 @@
 import java.io.FileNotFoundException;
 
 public class Pizzeria {
-    Menu menu;
+    static Menu menu;
     Ordreliste ordreliste;
 
-    public void showMenu(Menu menu){
+    public static void showMenu(){
         Pizza pizza = null;
         try {
             pizza = ImportPizzasFromFile.importPizzas();
@@ -12,9 +12,10 @@ public class Pizzeria {
             e.printStackTrace();
         }
         menu = Pizza.lavPizzaListe(pizza);
+        System.out.println(menu);
     }
 
     public static void main(String[] args) {
-        System.out.println(menu);
+        showMenu();
     }
 }
