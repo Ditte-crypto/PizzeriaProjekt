@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class Pizzeria {
     static Menu menu;
@@ -6,7 +7,8 @@ public class Pizzeria {
 
     public static void showMenu(){
         try {
-            ImportPizzasFromFile.importPizzas();
+            ArrayList<Pizza> pizzaliste = ImportPizzasFromFile.importPizzas();
+            menu = new Menu(pizzaliste);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

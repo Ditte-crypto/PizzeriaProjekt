@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Pizza {
 int id;
 String name;
-int pris;
+static int pris;
 int tilberedningstid;
 
     public Pizza(int id, String name, int pris, int tilberedningstid) {
@@ -16,11 +16,10 @@ int tilberedningstid;
 
     @Override
     public String toString() {
-        return "Pizza{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", pris=" + pris +
-                ", tilberedningstid=" + tilberedningstid +
-                '}';
+        return  "Nummer: " + id +
+                ", Navn: " + name +
+                ", Pris: " + pris +
+                ", Tilberedningstid: " + tilberedningstid +
+                "\n";
     }
 }

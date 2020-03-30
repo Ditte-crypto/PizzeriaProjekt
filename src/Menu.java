@@ -9,8 +9,7 @@ public class Menu {
 
     @Override
     public String toString() {
-        return "Menu{" +
-                "pizzaliste=" + pizzaliste +
-                '}';
+        return "Menu: \n" + pizzaliste
+                ;
     }
 }
