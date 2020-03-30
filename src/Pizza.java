@@ -17,7 +17,7 @@ int tilberedningstid;
     @Override
     public String toString() {
         return  "Nummer: " + id +
-                ", Navn: " + name + '\'' +
+                ", Navn: " + name +
                 ", Pris: " + pris +
                 ", Tilberedningstid: " + tilberedningstid +
                 "\n";
