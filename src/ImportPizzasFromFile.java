@@ -22,7 +22,7 @@ public class ImportPizzasFromFile {
             String [] lineArr = line.split(";");
 
             try {
-                tempPizza = new Pizza(Integer.parseInt(lineArr[0]), lineArr[1], Integer.parseInt(lineArr[2]), Integer.parseInt(lineArr[3]))
+                tempPizza = new Pizza(Integer.parseInt(lineArr[0]), lineArr[1], Integer.parseInt(lineArr[2]), Integer.parseInt(lineArr[3]));
 
             } catch (Exception e) {
                 System.out.println("Error in reading file" + line);
