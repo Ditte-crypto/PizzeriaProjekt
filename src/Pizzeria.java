@@ -7,7 +7,7 @@ public class Pizzeria {
     public static void showMenu(){
         Pizza pizza = null;
         try {
-            pizza = ImportPizzasFromFile.importPizzas();
+            ImportPizzasFromFile.importPizzas();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

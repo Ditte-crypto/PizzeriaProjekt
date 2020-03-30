@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ImportPizzasFromFile {
 
 
-    public static Pizza importPizzas() throws FileNotFoundException {
+    public static void importPizzas() throws FileNotFoundException {
 
         File textFile = new File("data/pizzaliste.csv");
 
@@ -20,18 +20,12 @@ public class ImportPizzasFromFile {
 
             String line = in.nextLine();
             String [] lineArr = line.split(";");
+            Pizza nyPizza = new Pizza(Integer.parseInt(lineArr[0]), lineArr[1], Integer.parseInt(lineArr[2]), Integer.parseInt(lineArr[3]));
 
-            try {
-                tempPizza = new Pizza(Integer.parseInt(lineArr[0]), lineArr[1], Integer.parseInt(lineArr[2]), Integer.parseInt(lineArr[3]));
-                }
-
-            catch (Exception e) {
-                System.out.println("Error in reading file" + line);
-            }
 
         }
         in.close();
-        return tempPizza;
+
 
     }
 }
