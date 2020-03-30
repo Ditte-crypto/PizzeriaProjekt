@@ -14,8 +14,6 @@ int tilberedningstid;
     }
 public static Menu lavPizzaListe(Pizza p){
         ArrayList<Pizza> pizzaliste = new ArrayList<>();
-
-
         Menu menu = new Menu(pizzaliste);
         return menu;
 }
