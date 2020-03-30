@@ -1,5 +1,16 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+/*+ showMenu(Menu); void
+
++ listOrders(); void
+
++ startNewOrder(); int
+
++ showNextOrder(); void
+
++ updateOrder(int); void
+
+ */
 
 public class Pizzeria {
     static Menu menu;
