@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Pizza {
 int id;
 String name;
@@ -10,7 +12,9 @@ int tilberedningstid;
         this.tilberedningstid = tilberedningstid;
         this.pris = pris;
     }
-public void makePizzaInstance(){
-
+public void lavPizzaliste(Pizza tempPizza){
+        ArrayList<Pizza> pizzaliste = new ArrayList<Pizza>;
+        pizzaliste.add(tempPizza);
+        Menu menu = new Menu(pizzaListe);
 }
 }
