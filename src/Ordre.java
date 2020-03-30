@@ -26,7 +26,5 @@ public class Ordre {
     public enum Status {
         venter, laves, faerdig, afhentet, afbestilt, none
     }
-
-    private Status statusexempel = Status.none;
 }
 

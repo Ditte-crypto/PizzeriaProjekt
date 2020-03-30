@@ -26,7 +26,16 @@ public class Pizzeria {
         System.out.println(menu);
     }
 
+    public static void listOrders() {
+        //show current orders
+    }
+
+    public static void startNewOrder() {
+        
+    }
+}
+
     public static void main(String[] args) {
         showMenu();
     }
-}
+
