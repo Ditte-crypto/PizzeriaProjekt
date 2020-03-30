@@ -5,13 +5,11 @@ public class Pizzeria {
     Ordreliste ordreliste;
 
     public static void showMenu(){
-        Pizza pizza = null;
         try {
             ImportPizzasFromFile.importPizzas();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        menu = Pizza.lavPizzaListe(pizza);
         System.out.println(menu);
     }
 
