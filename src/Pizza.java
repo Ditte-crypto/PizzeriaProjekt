@@ -12,9 +12,12 @@ int tilberedningstid;
         this.tilberedningstid = tilberedningstid;
         this.pris = pris;
     }
-public static Menu lavPizzaListe(Pizza tempPizza){
+public static Menu lavPizzaListe(Pizza p){
         ArrayList<Pizza> pizzaliste = new ArrayList<>();
-        pizzaliste.add(tempPizza);
+    for (Pizza p : pizzaliste) {
+        pizzaliste.add(p);
+    }
+
         Menu menu = new Menu(pizzaliste);
         return menu;
 }
