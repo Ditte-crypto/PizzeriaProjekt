@@ -30,7 +30,7 @@ public class Pizzeria {
         //show current orders
     }
 
-    public static void startNewOrder(int antal, int pizzanr) {
+    public static void startNewOrder(int pizzanr) {
         /* 3 Hawaipizzaer
         1 Vesuvio
          */
@@ -38,9 +38,9 @@ public class Pizzeria {
         Pizza pizza = pizzaliste.get(pizzanr - 1);
         Ordre newordre = new Ordre(Ordre.Status.venter);
 
-        for (int a = 0; a<=antal; a++) {
-            Ordre.addPizza(pizza);
-        }
+
+            newordre.addPizza(pizza);
+
     }
 
     public void showNextOrder(){

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Ordre {
     int id;
-    String status;
+    Status status;
     ArrayList<Pizza> pizzaer;
 
     public Ordre(Status status) {
@@ -10,7 +10,7 @@ public class Ordre {
         this.status = status;
     }
 
-    public static void addPizza(Pizza pizza) {
+    public void addPizza(Pizza pizza) {
         pizzaer.add(pizza);
     }
 
