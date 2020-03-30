@@ -1,16 +1,16 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class ImportPizzasFromFile {
 
-    public static ArrayList<Pizza> importPizzas() throws FileNotFoundException {
 
-        ArrayList<Pizza> importedpizzas = new ArrayList<>();
+    public static Pizza importPizzas() throws FileNotFoundException {
 
-        File textFile = new File("data/pizzafile.csv");
+        File textFile = new File("data/pizzaliste.csv");
 
         Pizza tempPizza = null;
 
@@ -22,13 +22,7 @@ public class ImportPizzasFromFile {
             String [] lineArr = line.split(";");
 
             try {
-                String [] playerArr = Arrays.copyOfRange(lineArr, 1, 2);
-
-                if(playerArr[0].contains("D")) {
-                    importedpizzas.add(tempPizza);
-                } else {
-                    System.out.println("hej");
-                }
+                tempPizza = new Pizza(Integer.parseInt(lineArr[0]), lineArr[1], Integer.parseInt(lineArr[2]), Integer.parseInt(lineArr[3]));
 
             } catch (Exception e) {
                 System.out.println("Error in reading file" + line);
@@ -36,7 +30,7 @@ public class ImportPizzasFromFile {
 
         }
         in.close();
-        return importedpizzas;
+        return tempPizza;
 
     }
 }

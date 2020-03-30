@@ -1,11 +1,9 @@
 import java.util.ArrayList;
 
 public class Menu {
-ArrayList<Pizza> Menu = new ArrayList<>();
+    ArrayList<String> pizzaliste;
 
-public void addPizzaToMenu(..) {
-
-    Menu.add(..);
-}
-
+    public Menu(ArrayList<Pizza> pizzaliste) {
+        this.pizzaliste = pizzaliste;
+    }
 }
