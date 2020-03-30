@@ -17,4 +17,14 @@ public static void lavPizzaListe(Pizza tempPizza){
         pizzaliste.add(tempPizza);
         Menu menu = new Menu(pizzaliste);
 }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", pris=" + pris +
+                ", tilberedningstid=" + tilberedningstid +
+                '}';
+    }
 }
