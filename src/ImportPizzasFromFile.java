@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ImportPizzasFromFile {
 
 
-    public Pizza importPizzas() throws FileNotFoundException {
+    public static Pizza importPizzas() throws FileNotFoundException {
 
         File textFile = new File("data/pizzaliste.csv");
 

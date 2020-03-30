@@ -3,6 +3,7 @@ public class Pizzeria {
     Ordreliste ordreliste;
 
     public void showMenu(Menu menu){
-
+        Pizza pizza = ImportPizzasFromFile.importPizzas();
+        Pizza.lavPizzaListe(pizza);
     }
 }
