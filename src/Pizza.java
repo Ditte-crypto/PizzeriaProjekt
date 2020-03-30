@@ -14,9 +14,7 @@ int tilberedningstid;
     }
 public static Menu lavPizzaListe(Pizza p){
         ArrayList<Pizza> pizzaliste = new ArrayList<>();
-    for (Pizza p : pizzaliste) {
-        pizzaliste.add(p);
-    }
+
 
         Menu menu = new Menu(pizzaliste);
         return menu;
