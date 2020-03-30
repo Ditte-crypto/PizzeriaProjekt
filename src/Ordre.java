@@ -9,7 +9,7 @@ public class Ordre {
 
     }
 
-    public double calculateTotal(Ordre) {
+    public double calculateTotal(Ordre ordre) {
         double total = 0.0;
 
         return total;
