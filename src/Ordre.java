@@ -5,13 +5,12 @@ public class Ordre {
     String status;
     ArrayList<Pizza> pizzaer;
 
-    public Ordre(int id, String status, ArrayList<Pizza> pizzaer) {
-        this.id = id;
+    public Ordre(Status status) {
+        this.id = id++;
         this.status = status;
-        this.pizzaer = pizzaer;
     }
 
-    public void addPizza(Pizza pizza) {
+    public static void addPizza(Pizza pizza) {
         pizzaer.add(pizza);
     }
 
