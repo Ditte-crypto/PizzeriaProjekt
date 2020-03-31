@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 /*+ showMenu(); void
 
 + listOrders(); void
@@ -30,17 +31,29 @@ public class Pizzeria {
         //show current orders
     }
 
-    public static void startNewOrder(int pizzanr) {
-        /* 3 Hawaipizzaer
-        1 Vesuvio
-         */
-        ArrayList<Pizza> pizzaliste = Menu.getPizzaliste();
-        Pizza pizza = pizzaliste.get(pizzanr - 1);
+    public static void startNewOrder() {
+
+        ArrayList<Pizza> tempMenu = menu.getPizzaliste();
         Ordre newordre = new Ordre(Ordre.Status.venter);
+        System.out.println("Indtast Pizzanummer, eller Q for quit \n");
+        String choice = "";
+        int pizza_id = 0;
+        Pizza tempPizza = null;
 
-
-            newordre.addPizza(pizza);
-
+        Scanner in = new Scanner(System.in);
+        while (!choice.equals("Q")) {
+            choice = in.nextLine();
+            try {
+                pizza_id = Integer.parseInt(choice);
+                if (pizza_id < tempMenu.size() && pizza_id > 0) {
+                    tempPizza = tempMenu.get(pizza_id - 1);
+                    newordre.addPizza(tempPizza);
+                    System.out.println(tempPizza);
+                }
+            } catch (IllegalArgumentException e) {
+                choice = "Q";
+            }
+        }
     }
 
     public void showNextOrder(){
@@ -52,7 +65,11 @@ public class Pizzeria {
     }
 
     public static void main(String[] args) {
-        showMenu();
+        Scanner in = new Scanner(System.in);
+
+        int choice
+        //showMenu();
+        //startNewOrder();
     }
 }
 

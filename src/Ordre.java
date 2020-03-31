@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 
 public class Ordre {
+    static int counter = 0;
     int id;
     Status status;
     ArrayList<Pizza> pizzaer;
 
     public Ordre(Status status) {
-        this.id = id++;
+        this.pizzaer = new ArrayList<Pizza>();
+        this.id = counter++;
         this.status = status;
     }
 

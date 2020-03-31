@@ -8,7 +8,7 @@ public class Menu {
         Menu.pizzaliste = pizzaliste;
     }
 
-    public static ArrayList<Pizza> getPizzaliste() {
+    public ArrayList<Pizza> getPizzaliste() {
         return pizzaliste;
     }
 
