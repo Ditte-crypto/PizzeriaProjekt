@@ -27,5 +27,9 @@ public class Ordre {
     public enum Status {
         venter, laves, faerdig, afhentet, afbestilt, none
     }
+
+    public ArrayList<Pizza> getPizzaer() {
+        return pizzaer;
+    }
 }
 

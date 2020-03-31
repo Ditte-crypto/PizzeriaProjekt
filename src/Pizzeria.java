@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class Pizzeria {
     static Menu menu;
-    Ordreliste ordreliste;
+    static Ordreliste ordreliste = new Ordreliste();
 
     public static void showMenu() {
         try {
@@ -28,7 +28,7 @@ public class Pizzeria {
     }
 
     public static void listOrders() {
-        //show current orders
+        System.out.println(Ordre.getPizzaer());
     }
 
     public static void startNewOrder() {
@@ -54,6 +54,7 @@ public class Pizzeria {
                 choice = "Q";
             }
         }
+        ordreliste.addOrdreToList(newordre);
     }
 
     public void showNextOrder(){
@@ -67,9 +68,28 @@ public class Pizzeria {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        int choice
-        //showMenu();
-        //startNewOrder();
+        System.out.println("******* PIZZERIA ALLA ALFONSO E MARIO *******\n"+
+                            "1. Start ny ordre\n" +
+                            "2. Vis Pizza ordre\n" +
+                            "3. Vis næste ordre\n" +
+                            "4. Opdater ordre\n" +
+                            "5. Vis menu\n" +
+                            "6. Exit");
+
+        int choice = in.nextInt();
+
+        if (choice == 1){
+            showMenu();
+            startNewOrder();
+        } else if (choice == 2) {
+            listOrders();
+        } else if (choice == 3) {
+            //showNextOrder
+        } else if (choice == 4) {
+            //updateOrder
+        } else if (choice == 5) {
+            showMenu();
+        }
     }
 }
 
