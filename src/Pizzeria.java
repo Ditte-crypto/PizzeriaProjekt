@@ -57,8 +57,7 @@ public class Pizzeria {
             }
         }
         ordreliste.addOrderToList(newordre);
-
-        listOrders();
+        showInterface();
     }
 
     public void showNextOrder(){
@@ -69,31 +68,45 @@ public class Pizzeria {
 
     }
 
-    public static void main(String[] args) {
+    public static void menuSettings() {
+        int choice = 0;
+
         Scanner in = new Scanner(System.in);
-
-        System.out.println("******* PIZZERIA ALLA ALFONSO E MARIO *******\n"+
-                            "1. Start ny ordre\n" +
-                            "2. Vis Pizza ordre\n" +
-                            "3. Vis næste ordre\n" +
-                            "4. Opdater ordre\n" +
-                            "5. Vis menu\n" +
-                            "6. Exit");
-
-        int choice = in.nextInt();
-
-        if (choice == 1){
-            showMenu();
-            startNewOrder();
-        } else if (choice == 2) {
-            listOrders();
-        } else if (choice == 3) {
-            //showNextOrder
-        } else if (choice == 4) {
-            //updateOrder
-        } else if (choice == 5) {
-            showMenu();
+        while (choice != 6) {
+            choice = in.nextInt();
+            try {
+                if (choice == 1){
+                    showMenu();
+                    startNewOrder();
+                } else if (choice == 2) {
+                    listOrders();
+                    showInterface();
+                } else if (choice == 3) {
+                    //showNextOrder
+                } else if (choice == 4) {
+                    //updateOrder
+                } else if (choice == 5) {
+                    showMenu();
+                }
+            } catch (IllegalArgumentException e) {
+                choice = 6;
+            }
         }
+    }
+
+    public static void showInterface() {
+        System.out.println("******* PIZZERIA ALLA ALFONSO E MARIO *******\n"+
+                "1. Start ny ordre\n" +
+                "2. Vis Pizza ordre\n" +
+                "3. Vis næste ordre\n" +
+                "4. Opdater ordre\n" +
+                "5. Vis menu\n" +
+                "6. Exit");
+    }
+
+    public static void main(String[] args) {
+        showInterface();
+        menuSettings();
     }
 }
 
