@@ -13,4 +13,8 @@ public class Ordreliste {
     public void addOrderToList(Ordre ordre) {
         ordreliste.add(ordre);
     }
+
+    public ArrayList<Ordre> getOrdreliste() {
+        return ordreliste;
+    }
 }

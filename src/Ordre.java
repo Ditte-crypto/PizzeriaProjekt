@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Ordre {
-    static int counter = 0;
+    static int counter = 1;
     int id;
     Status status;
     ArrayList<Pizza> pizzaer;
@@ -22,6 +22,15 @@ public class Ordre {
             total = total +Pizza.pris;
         }
         return total;
+    }
+
+    @Override
+    public String toString() {
+        return "Ordre{" +
+                "id=" + id +
+                ", status=" + status +
+                ", pizzaer=" + pizzaer +
+                '}';
     }
 
     public enum Status {

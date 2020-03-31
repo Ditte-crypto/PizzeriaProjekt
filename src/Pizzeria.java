@@ -28,7 +28,9 @@ public class Pizzeria {
     }
 
     public static void listOrders() {
-        System.out.println(Ordre.getPizzaer());
+        for(Ordre o: ordreliste.getOrdreliste()){
+            System.out.println(o);
+        }
     }
 
     public static void startNewOrder() {
@@ -54,7 +56,9 @@ public class Pizzeria {
                 choice = "Q";
             }
         }
-        ordreliste.addOrdreToList(newordre);
+        ordreliste.addOrderToList(newordre);
+
+        listOrders();
     }
 
     public void showNextOrder(){
