@@ -81,7 +81,7 @@ public class Pizzeria {
                             + "\n1. " + Ordre.Status.laves +
                             "\n2. " + Ordre.Status.faerdig +
                             "\n3. " + Ordre.Status.afhentet +
-                            "\n4. " + Ordre.Status.afbestilt
+                            "\n4. " + Ordre.Status.afbestilt +
                             "\n5. Exit");
 
 
@@ -104,12 +104,12 @@ public class Pizzeria {
     }
 
     public static void editOrder() {
-        int id = Ordre.getId();
+        //int id = Ordre.getId();
         Scanner in = new Scanner(System.in);
         String choice = "";
         while (!choice.equals("Q")) {
             choice = in.nextLine();
-            System.out.println("Her kan du redigere i din ordre med id " + id + ". Tast pizzanummeret for at vælge en pizza. Tryk Q for at forlade redigerOrdreProgrammet");
+            //System.out.println("Her kan du redigere i din ordre med id " + id + ". Tast pizzanummeret for at vælge en pizza. Tryk Q for at forlade redigerOrdreProgrammet");
             ArrayList<Pizza> tempMenu = menu.getPizzaliste();
             try {
                 int pizza_id = in.nextInt();
@@ -124,7 +124,7 @@ public class Pizzeria {
 
                 } else {
                     System.out.println("Denne pizza eksisterer ikke");
-                    editOrder(id);
+                    //editOrder();
                 }
             } catch (IllegalArgumentException e) {
                 choice = "Q";
