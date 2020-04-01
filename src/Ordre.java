@@ -1,15 +1,21 @@
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Ordre {
     static int counter = 1;
     int id;
     Status status;
     ArrayList<Pizza> pizzaer;
+    Date date;
+    Timestamp ts;
 
     public Ordre(Status status) {
         this.pizzaer = new ArrayList<Pizza>();
         this.id = counter++;
         this.status = status;
+        this.date = new Date();
+        this.ts = new Timestamp(date.getTime());
     }
 
     public void addPizza(Pizza pizza) {
@@ -30,6 +36,7 @@ public class Ordre {
                 "id=" + id +
                 ", status=" + status +
                 ", pizzaer=" + pizzaer +
+                ", Timestamp=" + ts +
                 '}';
     }
 
