@@ -121,9 +121,6 @@ public class Pizzeria {
                 "6. Vis menu\n" +
                 "7. Exit");
     }
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 
     public static void main(String[] args) {
         UI.showInterface();
