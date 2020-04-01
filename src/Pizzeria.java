@@ -71,6 +71,17 @@ public class Pizzeria {
 
     }
 
+    public void editOrder(int id){
+        Scanner in = new Scanner(System.in);
+        String choice = "";
+        while (!choice.equals("Q")) {
+            System.out.println("Her kan du redigere i din ordre med id " + id + ". Tast pizzanummeret for at vælge en pizza.\ Tryk Q for at forlade redigerOrdreProgrammet");
+
+
+            }
+        }
+    }
+
     public static void menuSettings() {
         int choice = 0;
 
