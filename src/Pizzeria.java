@@ -63,10 +63,6 @@ public class Pizzeria {
         UI.showInterface();
     }
 
-    public void showNextOrder() {
-
-    }
-
     public static void updateOrder() {
         //TODO: Få fat i ordre id, og brug det tal til at hente ordre frem fra en liste
         Scanner in = new Scanner(System.in);
