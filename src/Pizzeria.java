@@ -94,7 +94,7 @@ public class Pizzeria {
                     choice = 5;
                 } else if (choice == 3) {
                     ordrevalg.setStatus(Ordre.Status.afhentet);
-                    System.out.println("Ordre status er ændret til  " + Ordre.Status.afhentet + "\n");
+                    System.out.println("Ordre status er ændret til " + Ordre.Status.afhentet + "\n");
                     choice = 5;
                 } else if (choice == 4) {
                     ordrevalg.setStatus(Ordre.Status.afbestilt);
