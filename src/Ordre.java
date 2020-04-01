@@ -47,5 +47,13 @@ public class Ordre {
     public ArrayList<Pizza> getPizzaer() {
         return pizzaer;
     }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
 

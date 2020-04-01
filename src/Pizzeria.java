@@ -67,8 +67,9 @@ public class Pizzeria {
 
     }
 
-    public void updateOrder(int id){
-        
+    public static void updateOrder(Ordre ordre){
+        //ordre.id 1.status.laves
+        ordre.setStatus(Ordre.Status.laves);
     }
 
     public void editOrder(int id) {
