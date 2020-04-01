@@ -64,7 +64,7 @@ public class Pizzeria {
     }
 
     public void showNextOrder(){
-        System.out.println(//tilberedningstid + timestamp);
+        //System.out.println(tilberedningstid + timestamp);
     }
 
     public void updateOrder(int id){
