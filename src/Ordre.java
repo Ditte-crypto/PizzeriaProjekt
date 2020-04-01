@@ -34,7 +34,7 @@ public class Ordre {
     }
 
     public enum Status {
-        venter, laves, faerdig, afhentet, afbestilt, none
+        venter, laves, faerdig, afhentet, afbestilt
     }
 
     public ArrayList<Pizza> getPizzaer() {

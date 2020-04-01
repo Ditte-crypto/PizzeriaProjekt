@@ -51,6 +51,9 @@ public class Pizzeria {
                     tempPizza = tempMenu.get(pizza_id - 1);
                     newordre.addPizza(tempPizza);
                     System.out.println(tempPizza);
+                } else {
+                    System.out.println("Denne pizza existere ikke");
+                    startNewOrder();
                 }
             } catch (IllegalArgumentException e) {
                 choice = "Q";
@@ -82,14 +85,16 @@ public class Pizzeria {
                     listOrders();
                     showInterface();
                 } else if (choice == 3) {
-                    //showNextOrder
+                    //fjern eller tilføj pizza fra ordre
                 } else if (choice == 4) {
-                    //updateOrder
+                    //vis næste ordre
                 } else if (choice == 5) {
+                    //updateOrder
+                } else if (choice == 6) {
                     showMenu();
                 }
             } catch (IllegalArgumentException e) {
-                choice = 6;
+                choice = 7;
             }
         }
     }
@@ -97,11 +102,12 @@ public class Pizzeria {
     public static void showInterface() {
         System.out.println("******* PIZZERIA ALLA ALFONSO E MARIO *******\n"+
                 "1. Start ny ordre\n" +
-                "2. Vis Pizza ordre\n" +
-                "3. Vis næste ordre\n" +
-                "4. Opdater ordre\n" +
-                "5. Vis menu\n" +
-                "6. Exit");
+                "2. Vis aktive ordre\n" +
+                "3. Fjern eller tilføj Pizza fra ordre\n" +
+                "4. Vis næste ordre\n" +
+                "5. Opdater ordre status\n" +
+                "6. Vis menu\n" +
+                "7. Exit");
     }
 
     public static void main(String[] args) {
