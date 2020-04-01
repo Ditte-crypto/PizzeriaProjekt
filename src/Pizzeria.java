@@ -28,7 +28,7 @@ public class Pizzeria {
     }
 
     public static void listOrders() {
-        for(Ordre o: ordreliste.getOrdreliste()){
+        for (Ordre o : ordreliste.getOrdreliste()) {
             System.out.println(o);
         }
     }
@@ -63,20 +63,52 @@ public class Pizzeria {
         UI.showInterface();
     }
 
-    public void showNextOrder(){
+    public void showNextOrder() {
 
     }
 
-    public void updateOrder(int id){
-        
+    public static void updateOrder() {
+        //TODO: Få fat i ordre id, og brug det tal til at hente ordre frem fra en liste
+        Scanner in = new Scanner(System.in);
+        System.out.println("Hvilken ordre vil du gerne ændre på?");
+        int choice = in.nextInt();
+
+        Ordre ordrevalg = Ordreliste.getOrderById(choice);
+
+        choice = 0;
+
+        System.out.println("Hvad vil du ændre din ordre til?"
+                            + "\n1. " + Ordre.Status.laves +
+                            "\n2. " + Ordre.Status.faerdig +
+                            "\n3. " + Ordre.Status.afhentet +
+                            "\n4. " + Ordre.Status.afbestilt
+                            "\n5. Exit");
+
+
+        while (choice != 5) {
+            choice = in.nextInt();
+            try {
+                if (choice == 1){
+                    ordrevalg.setStatus(Ordre.Status.laves);
+                } else if (choice == 2) {
+                    ordrevalg.setStatus(Ordre.Status.faerdig);
+                } else if (choice == 3) {
+                    ordrevalg.setStatus(Ordre.Status.afhentet);
+                } else if (choice == 4) {
+                    ordrevalg.setStatus(Ordre.Status.afbestilt);
+                }
+            } catch (IllegalArgumentException e) {
+                choice = 5;
+            }
+        }
     }
 
-    public void editOrder() {
+    public static void editOrder() {
+        int id = Ordre.getId();
         Scanner in = new Scanner(System.in);
         String choice = "";
         while (!choice.equals("Q")) {
             choice = in.nextLine();
-
             System.out.println("Her kan du redigere i din ordre med id " + id + ". Tast pizzanummeret for at vælge en pizza. Tryk Q for at forlade redigerOrdreProgrammet");
             ArrayList<Pizza> tempMenu = menu.getPizzaliste();
             try {
@@ -102,9 +134,9 @@ public class Pizzeria {
     }
 
 
-    public static void main(String[] args) {
-        UI.showInterface();
-        UI.menuSettings();
+        public static void main (String[]args){
+            UI.showInterface();
+            UI.menuSettings();
+        }
     }
-}
 
