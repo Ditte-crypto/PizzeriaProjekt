@@ -52,7 +52,7 @@ public class Pizzeria {
                     newordre.addPizza(tempPizza);
                     System.out.println(tempPizza);
                 } else {
-                    System.out.println("Denne pizza existere ikke");
+                    System.out.println("Denne pizza existerer ikke");
                     startNewOrder();
                 }
             } catch (IllegalArgumentException e) {
@@ -100,34 +100,46 @@ public class Pizzeria {
     }
 
     public static void editOrder() {
-        //int id = Ordre.getId();
         Scanner in = new Scanner(System.in);
+
         String choice = "";
         while (!choice.equals("Q")) {
-            choice = in.nextLine();
+
             //System.out.println("Her kan du redigere i din ordre med id " + id + ". Tast pizzanummeret for at vælge en pizza. Tryk Q for at forlade redigerOrdreProgrammet");
             ArrayList<Pizza> tempMenu = menu.getPizzaliste();
             try {
+                System.out.println("Hvilken ordre vil du gerne ændre på? Skriv ordrenummeret. Tryk Q for quit");
+                choice = in.nextLine();
+                Ordre ordrevalg = Ordreliste.getOrderById(Integer.parseInt(choice));
+
+                System.out.println("Hvilken pizza skal tilføjes eller fjernes fra ordren? Tast pizza id: ");
                 int pizza_id = in.nextInt();
+
                 if (pizza_id < tempMenu.size() && pizza_id > 0) {
                     System.out.println("Du har valgt pizzaen med nummer " + pizza_id);
                     System.out.println("Tryk 1 for at slette pizzaen fra ordren, eller tryk 2 for at tilføje pizzaen til ordren.");
-                    if (in.nextInt() == 1) {
+                    choice = in.nextLine();
+                    if (choice.equals(1)) {
+                        Pizza pizza = menu.getPizzaById(pizza_id);
+                        ordrevalg.removePizza(pizza);
                         System.out.println("Pizza nr. " + pizza_id + " er blevet slettet fra ordren.\n Tryk Q for at forlade programmet");
-                    } else if (in.nextInt() == 2) {
+                    } else if (choice.equals(2)) {
+                        Pizza pizza = menu.getPizzaById(pizza_id);
+                        ordrevalg.addPizza(pizza);
                         System.out.println("Pizza nr. " + pizza_id + " er blevet tilføjet til ordren.\n Tryk Q for at forlade programmet");
+                    } else {
+                        System.out.println("Denne pizza eksisterer ikke");
+                        editOrder();
                     }
-
-                } else {
-                    System.out.println("Denne pizza eksisterer ikke");
-                    //editOrder();
                 }
             } catch (IllegalArgumentException e) {
                 choice = "Q";
 
             }
         }
-    }
+        }
+
+
 
 
         public static void main (String[]args){

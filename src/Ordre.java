@@ -21,6 +21,9 @@ public class Ordre {
     public void addPizza(Pizza pizza) {
         pizzaer.add(pizza);
     }
+    public void removePizza(Pizza pizza){
+        pizzaer.remove(pizza);
+    }
 
     public double calculateTotal(Ordre ordre) {
         double total = 0.0;

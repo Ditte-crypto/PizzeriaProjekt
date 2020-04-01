@@ -13,6 +13,9 @@ int tilberedningstid;
         this.pris = pris;
     }
 
+    public int getId() {
+        return id;
+    }
 
     @Override
     public String toString() {
