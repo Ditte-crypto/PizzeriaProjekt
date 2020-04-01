@@ -75,8 +75,27 @@ public class Pizzeria {
         Scanner in = new Scanner(System.in);
         String choice = "";
         while (!choice.equals("Q")) {
+            choice = in.nextLine();
             System.out.println("Her kan du redigere i din ordre med id " + id + ". Tast pizzanummeret for at vælge en pizza. Tryk Q for at forlade redigerOrdreProgrammet");
+            ArrayList<Pizza> tempMenu = menu.getPizzaliste();
+            try {
+                int pizza_id = in.nextInt();
+                if (pizza_id < tempMenu.size() && pizza_id > 0) {
+                    System.out.println("Du har valgt pizzaen med nummer "+pizza_id);
+                    System.out.println("Tryk 1 for at slette pizzaen fra ordren, eller tryk 2 for at tilføje pizzaen til ordren.");
+                    if (in.nextInt() == 1){
+                        System.out.println("Pizza nr. "+pizza_id+" er blevet slettet fra ordren.\n Tryk Q for at forlade programmet");
+                    }else if (in.nextInt() == 2){
+                        System.out.println("Pizza nr. "+pizza_id+" er blevet tilføjet til ordren.\n Tryk Q for at forlade programmet");
+                    }
 
+                    }
+                else {
+                    System.out.println("Denne pizza eksisterer ikke");
+                    editOrder(id);
+                }
+            } catch (IllegalArgumentException e) {
+                choice = "Q";
 
         }
     }
