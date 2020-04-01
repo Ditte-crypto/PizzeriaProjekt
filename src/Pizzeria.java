@@ -28,7 +28,7 @@ public class Pizzeria {
     }
 
     public static void listOrders() {
-        for(Ordre o: ordreliste.getOrdreliste()){
+        for (Ordre o : ordreliste.getOrdreliste()) {
             System.out.println(o);
         }
     }
@@ -63,16 +63,48 @@ public class Pizzeria {
         UI.showInterface();
     }
 
-    public void showNextOrder(){
+    public void showNextOrder() {
 
     }
 
-    public static void updateOrder(Ordre ordre){
-        //ordre.id 1.status.laves
-        ordre.setStatus(Ordre.Status.laves);
+    public static void updateOrder() {
+        //TODO: Få fat i ordre id, og brug det tal til at hente ordre frem fra en liste
+        Scanner in = new Scanner(System.in);
+        System.out.println("Hvilken ordre vil du gerne ændre på?");
+        int choice = in.nextInt();
+
+        Ordre ordrevalg = Ordreliste.getOrderById(choice);
+
+        choice = 0;
+
+        System.out.println("Hvad vil du ændre din ordre til?"
+                            + "\n1. " + Ordre.Status.laves +
+                            "\n2. " + Ordre.Status.faerdig +
+                            "\n3. " + Ordre.Status.afhentet +
+                            "\n4. " + Ordre.Status.afbestilt
+                            "\n5. Exit");
+
+
+        while (choice != 5) {
+            choice = in.nextInt();
+            try {
+                if (choice == 1){
+                    ordrevalg.setStatus(Ordre.Status.laves);
+                } else if (choice == 2) {
+                    ordrevalg.setStatus(Ordre.Status.faerdig);
+                } else if (choice == 3) {
+                    ordrevalg.setStatus(Ordre.Status.afhentet);
+                } else if (choice == 4) {
+                    ordrevalg.setStatus(Ordre.Status.afbestilt);
+                }
+            } catch (IllegalArgumentException e) {
+                choice = 5;
+            }
+        }
     }
 
-    public void editOrder(int id) {
+    public static void editOrder() {
+        int id = Ordre.getId();
         Scanner in = new Scanner(System.in);
         String choice = "";
         while (!choice.equals("Q")) {
@@ -82,29 +114,29 @@ public class Pizzeria {
             try {
                 int pizza_id = in.nextInt();
                 if (pizza_id < tempMenu.size() && pizza_id > 0) {
-                    System.out.println("Du har valgt pizzaen med nummer "+pizza_id);
+                    System.out.println("Du har valgt pizzaen med nummer " + pizza_id);
                     System.out.println("Tryk 1 for at slette pizzaen fra ordren, eller tryk 2 for at tilføje pizzaen til ordren.");
-                    if (in.nextInt() == 1){
-                        System.out.println("Pizza nr. "+pizza_id+" er blevet slettet fra ordren.\n Tryk Q for at forlade programmet");
-                    }else if (in.nextInt() == 2){
-                        System.out.println("Pizza nr. "+pizza_id+" er blevet tilføjet til ordren.\n Tryk Q for at forlade programmet");
+                    if (in.nextInt() == 1) {
+                        System.out.println("Pizza nr. " + pizza_id + " er blevet slettet fra ordren.\n Tryk Q for at forlade programmet");
+                    } else if (in.nextInt() == 2) {
+                        System.out.println("Pizza nr. " + pizza_id + " er blevet tilføjet til ordren.\n Tryk Q for at forlade programmet");
                     }
 
-                    }
-                else {
+                } else {
                     System.out.println("Denne pizza eksisterer ikke");
                     editOrder(id);
                 }
             } catch (IllegalArgumentException e) {
                 choice = "Q";
 
+            }
         }
     }
 
 
-    public static void main(String[] args) {
-        UI.showInterface();
-        UI.menuSettings();
+        public static void main (String[]args){
+            UI.showInterface();
+            UI.menuSettings();
+        }
     }
-}
 

@@ -27,11 +27,12 @@ public class UI {
                     Pizzeria.listOrders();
                     showInterface();
                 } else if (choice == 3) {
+                    Pizzeria.editOrder();
                     //fjern eller tilføj pizza fra ordre
                 } else if (choice == 4) {
                     //vis næste ordre
                 } else if (choice == 5) {
-                    //updateOrder
+                    Pizzeria.updateOrder();
                 } else if (choice == 6) {
                     Pizzeria.showMenu();
                 }
